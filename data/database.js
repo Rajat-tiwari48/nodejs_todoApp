@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const connectDB = ()=>{
 mongoose
-.connect(process.env.MONGO_URL,{
+.connect(process.env.MONGO_URI,{
     dbName: "backendAPI1",})
-    .then(()=> console.log("Connected to MongoDB"))
+    .then((c)=> console.log(`Database is connected with  ${c.connection.host}`))
     .catch((err)=> console.log(err))};
